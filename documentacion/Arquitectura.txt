@@ -1,0 +1,34 @@
+                    ┌────────────────────────┐
+                    │     Usuario / Main     │
+                    │ (Inicia la simulación) │
+                    └────────────┬───────────┘
+                                 │
+                                 ▼
+               ┌───────────────────────────────────┐
+               │        ServicioEmergencias        │
+               │───────────────────────────────────│
+               │ - Lanza los 20 procesos Bote      │
+               │ - Recoge resultados               │
+               │ - Gestiona el tiempo de espera    │
+               │ - Envía datos al GeneradorInforme │
+               └───────────────┬───────────────────┘
+                               │
+           ┌───────────────────┴───────────────────┐
+           ▼                                       ▼
+┌───────────────────────────┐         ┌────────────────────────┐
+│           Bote            │         │    GeneradorInforme    │
+│───────────────────────────│         │────────────────────────│
+│ - Proceso independiente   │         │ - Recibe los registros │
+│ - Genera nº aleatorio de  │         │ - Calcula totales      │
+│   pasajeros (1–100)       │         │ - Crea "Informe.md"    │
+│ - Clasifica: mujeres,     │         │ - Imprime mensaje éxito│
+│   hombres, niños          │         └─────────────┬──────────┘
+└──────────┬────────────────┘                       │
+           │                                        ▼
+           ▼                          ┌────────────────────────────┐
+┌──────────────────────┐              │     ExportadorInformes     │
+│      Pasajeros       │              │────────────────────────────│
+│──────────────────────│              │ (Futuros formatos PDF, etc)│
+│ - Clase simple       │              │ - Métodos no implementados │
+│   con tipo aleatorio │              │ - Lanza UnsupportedOpExc   │
+└──────────────────────┘              └────────────────────────────┘

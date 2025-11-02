@@ -10,10 +10,12 @@ import java.util.Random;
 import static es.etg.dam.Constantes.Botes.CLASE_BOTE;
 import static es.etg.dam.Constantes.Botes.CLASSPATH;
 import static es.etg.dam.Constantes.Botes.CP;
+import static es.etg.dam.Constantes.Botes.DOS_PUNTOS;
 import static es.etg.dam.Constantes.Botes.ID_BOTE;
 import static es.etg.dam.Constantes.Botes.JAVA;
 import static es.etg.dam.Constantes.Botes.MAX_RETARDO;
 import static es.etg.dam.Constantes.Botes.MIN_RETARDO;
+import static es.etg.dam.Constantes.Botes.MSG_ERROR_GENERAR_INFORME;
 import static es.etg.dam.Constantes.Botes.MSG_FIN;
 import static es.etg.dam.Constantes.Botes.MSG_INICIO;
 import static es.etg.dam.Constantes.Botes.MSG_LANZANDO_BOTE;
@@ -54,7 +56,7 @@ public class ServicioEmergencias {
                 Thread.sleep((RANDOM.nextInt(MAX_RETARDO - MIN_RETARDO + 1) + MIN_RETARDO) * 1000L);
 
             } catch (IOException e) {
-                System.err.println("❌ Error al lanzar el bote " + id + ": " + e.getMessage());
+                System.err.println(MSG_ERROR_GENERAR_INFORME + id + DOS_PUNTOS + e.getMessage());
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 return;

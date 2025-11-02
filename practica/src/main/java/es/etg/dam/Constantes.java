@@ -32,6 +32,8 @@ public final class Constantes {
         public static final String MSG_LANZANDO_BOTE = "%s → %d personas%n";
         public static final String MSG_INICIO = "Iniciando gestión de emergencia...";
         public static final String MSG_FIN = "Todos los botes han sido procesados.";
+        public static final String MSG_ERROR_GENERAR_INFORME = "Error al generar el informe: ";
+        public static final String DOS_PUNTOS = ": ";
     }
 
     public static final class Informe {
